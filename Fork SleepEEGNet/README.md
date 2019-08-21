@@ -58,16 +58,19 @@ python prepare_physionet.py --data_dir data_2013 --output_dir data_2013/eeg_pz_o
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/seq2seq_sleep.jpg)
 * We only changed the CNN part in the above image.
 * For example, run the below script to train SleepEEGNET(skipconnect) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_skipconnect_epoch120.png)
 ```
 python seq2seq_sleep_sleep-EDF-skipconnect.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
 ```
 * For example, run the below script to train SleepEEGNET(conv) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_conv128_epoch50.png)
 ```
 python seq2seq_sleep_sleep-EDF-conv.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
 ```
 * For example, run the below script to train SleepEEGNET(dilatedconv) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_dilatedconv5_epoch30.png)
 ```
 python seq2seq_sleep_sleep-EDF-dilatedconv.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
@@ -88,7 +91,7 @@ python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
 ```
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/results.png)
 We can see that we used fewer training epochs and relatively fewer parameters, and we got fairly good results.
-In fact, due to limitations in computing resources,and we still have other models to run, and time is too late£¬we only used five channels of output in the dilated convolution. Although this greatly reduces the parameters, it also greatly affects the accuracy. I personally think that if you increase the number of training rounds or increase the amount of parameters, the model can also achieve a good result.
+In fact, due to limitations in computing resources,and we still have other models to run, and time is too late. we only used five channels of output in the dilated convolution. Although this greatly reduces the parameters, it also greatly affects the accuracy. Because other networks, including the original network, the output channels are 128 channels. I personally think that if you increase the number of training rounds or increase the amount of parameters, the model can also achieve a good result.
 
 ## Visualization
 * Run the below script to visualize attention maps of a sequence input (EEG epochs) for Fpz-Cz channel.

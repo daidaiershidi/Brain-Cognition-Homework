@@ -58,16 +58,19 @@ python prepare_physionet.py --data_dir data_2013 --output_dir data_2013/eeg_pz_o
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/seq2seq_sleep.jpg)
 * We only changed the CNN part in the above image.
 * For example, run the below script to train SleepEEGNET(skipconnect) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_skipconnect_epoch120.png)
 ```
 python seq2seq_sleep_sleep-EDF-skipconnect.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
 ```
 * For example, run the below script to train SleepEEGNET(conv) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_conv128_epoch50.png)
 ```
 python seq2seq_sleep_sleep-EDF-conv.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
 ```
 * For example, run the below script to train SleepEEGNET(dilatedconv) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_dilatedconv5_epoch30.png)
 ```
 python seq2seq_sleep_sleep-EDF-dilatedconv.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20

@@ -88,7 +88,7 @@ python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
 ```
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/results.png)
 We can see that we used fewer training epochs and relatively fewer parameters, and we got fairly good results.
-In fact, due to limitations in computing resources,and we still have other models to run, and time is too late£¬we only used five channels of output in the dilated convolution. Although this greatly reduces the parameters, it also greatly affects the accuracy. I personally think that if you increase the number of training rounds or increase the amount of parameters, the model can also achieve a good result.
+In fact, due to limitations in computing resources,and we still have other models to run, and time is too late. we only used five channels of output in the dilated convolution. Although this greatly reduces the parameters, it also greatly affects the accuracy. Because other networks, including the original network, the output channels are 128 channels. I personally think that if you increase the number of training rounds or increase the amount of parameters, the model can also achieve a good result.
 
 ## Visualization
 * Run the below script to visualize attention maps of a sequence input (EEG epochs) for Fpz-Cz channel.

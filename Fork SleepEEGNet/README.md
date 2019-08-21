@@ -86,7 +86,7 @@ python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(dilatedconv)
 ```
 python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
 ```
-
+![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/results.png)
 ## Visualization
 * Run the below script to visualize attention maps of a sequence input (EEG epochs) for Fpz-Cz channel.
 ```

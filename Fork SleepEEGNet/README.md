@@ -1,0 +1,97 @@
+# Said at the forefront
+Forked from SajadMo/SleepEEGNet(https://github.com/SajadMo/SleepEEGNet)
+Based on SleepEEGNet, we tried to add skip connection and dilated convolution in the CNN part.
+
+# SleepEEGNet: Automated Sleep Stage Scoring with Sequence to Sequence Deep Learning Approach
+In this study, we introduced a novel deep learning approach, called SleepEEGNet, for automated sleep stage scoring using a single-channel EEG.
+
+## Recruitments
+* Python 2.7
+* tensorflow/tensorflow-gpu 1.10
+* numpy(latest)
+* scipy(latest)
+* matplotlib(latest)
+* scikit-learn(latest)
+* matplotlib(latest)
+* imblearn 0.4
+* pandas(latest)
+* mne 0.14
+
+## Installation library
+* install imblearn 0.4 for python 2.7
+```
+cd imblearn0.4(py27)\imbalanced-learn-0.4.X
+pip install .
+```
+* install mne 0.14 for python 2.7
+```
+cd mne0.14(py27)
+pip install .
+```
+
+## Dataset and Data Preparation
+* To download SC subjects from the Sleep_EDF (2013) dataset, use the below script:
+
+```
+cd data_2013
+chmod +x download_physionet.sh
+./download_physionet.sh
+```
+
+* To download SC subjects from the Sleep_EDF (2018) dataset, use the below script:
+```
+cd data_2018
+chmod +x download_physionet.sh
+./download_physionet.sh
+```
+
+Use below scripts to extract sleep stages from the specific EEG channels of the Sleep_EDF (2013) dataset:
+
+```
+python prepare_physionet.py --data_dir data_2013 --output_dir data_2013/eeg_fpz_cz --select_ch 'EEG Fpz-Cz'
+python prepare_physionet.py --data_dir data_2013 --output_dir data_2013/eeg_pz_oz --select_ch 'EEG Pz-Oz'
+```
+
+## Train
+
+* Modify args settings in seq2seq_sleep_sleep-EDF.py for each dataset.
+
+* For example, run the below script to train SleepEEGNET model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
+```
+python seq2seq_sleep_sleep-EDF.py --data_dir data_2013/eeg_fpz_cz --output_dir outputs_2013 --n_folds 20
+```
+
+## Results
+* Run the below script to present the achieved results by SleepEEGNet model for Fpz-Cz channel.
+```
+python summary.py --data_dir output_2013/eeg_fpz_cz
+```
+
+![Alt text](/images/results.jpg)
+
+## Visualization
+* Run the below script to visualize attention maps of a sequence input (EEG epochs) for Fpz-Cz channel.
+```
+python visualize.py --data_dir output_2013/eeg_fpz_cz
+```
+
+
+## Citation
+
+If you find it useful, please cite our paper as follows:
+
+```
+@article{mousavi2019sleepEEGnet,
+  title={SleepEEGNet: Automated Sleep Stage Scoring with Sequence to Sequence Deep Learning Approach},
+  author={Sajad Mousavi, Fatemeh Afghah and U. Rajendra Acharya},
+  journal={arXiv preprint arXiv:1903.02108},
+  year={2019}
+}
+```
+
+## References
+ [github:akaraspt](https://github.com/akaraspt/deepsleepnet)  
+ [deepschool.io](https://github.com/sachinruk/deepschool.io/blob/master/DL-Keras_Tensorflow)
+ 
+## Licence 
+For academtic and non-commercial usage 

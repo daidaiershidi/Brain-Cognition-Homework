@@ -55,7 +55,7 @@ python prepare_physionet.py --data_dir data_2013 --output_dir data_2013/eeg_pz_o
 ## Train
 
 * Modify args settings in seq2seq_sleep_sleep-EDF.py for each dataset.
-* ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/seq2seq_sleep.jpg)
+![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/seq2seq_sleep.jpg)
 * We only changed the CNN part in the above image.
 * For example, run the below script to train SleepEEGNET(skipconnect) model with the 20-fold cross-validation using Fpz-Cz channel of the Sleep_EDF (2013) dataset:
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/CNN_skipconnect_epoch120.png)
@@ -74,36 +74,23 @@ python seq2seq_sleep_sleep-EDF-dilatedconv.py --data_dir data_2013/eeg_fpz_cz --
 ```
 
 ## Results
-* Run the below script to present the achieved results by SleepEEGNet model for Fpz-Cz channel.
+* Run the below script to present the achieved results by SleepEEGNet(skipconnect) model for Fpz-Cz channel.
 ```
-python summary.py --data_dir output_2013/eeg_fpz_cz
+python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(skipconnect)
 ```
-
-![Alt text](/images/results.jpg)
+* Run the below script to present the achieved results by SleepEEGNet(dilatedconv) model for Fpz-Cz channel.
+```
+python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(dilatedconv)
+```
+* Run the below script to present the achieved results by SleepEEGNet(conv) model for Fpz-Cz channel.
+```
+python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
+```
 
 ## Visualization
 * Run the below script to visualize attention maps of a sequence input (EEG epochs) for Fpz-Cz channel.
 ```
-python visualize.py --data_dir output_2013/eeg_fpz_cz
+python visualize.py --data_dir outputs_2013/outputs_eeg_fpz_cz(skipconnect)
+python visualize.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
+python visualize.py --data_dir outputs_2013/outputs_eeg_fpz_cz(dilatedconv)
 ```
-
-
-## Citation
-
-If you find it useful, please cite our paper as follows:
-
-```
-@article{mousavi2019sleepEEGnet,
-  title={SleepEEGNet: Automated Sleep Stage Scoring with Sequence to Sequence Deep Learning Approach},
-  author={Sajad Mousavi, Fatemeh Afghah and U. Rajendra Acharya},
-  journal={arXiv preprint arXiv:1903.02108},
-  year={2019}
-}
-```
-
-## References
- [github:akaraspt](https://github.com/akaraspt/deepsleepnet)  
- [deepschool.io](https://github.com/sachinruk/deepschool.io/blob/master/DL-Keras_Tensorflow)
- 
-## Licence 
-For academtic and non-commercial usage 

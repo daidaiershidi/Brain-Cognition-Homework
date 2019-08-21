@@ -2,9 +2,6 @@
 Forked from SajadMo/SleepEEGNet(https://github.com/SajadMo/SleepEEGNet)
 Based on SleepEEGNet, we tried to add skip connection and dilated convolution in the CNN part.
 
-# SleepEEGNet: Automated Sleep Stage Scoring with Sequence to Sequence Deep Learning Approach
-In this study, we introduced a novel deep learning approach, called SleepEEGNet, for automated sleep stage scoring using a single-channel EEG.
-
 ## Recruitments
 * Python 2.7
 * tensorflow/tensorflow-gpu 1.10

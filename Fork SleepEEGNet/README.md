@@ -1,6 +1,7 @@
 # Said at the forefront
 Forked from SajadMo/SleepEEGNet(https://github.com/SajadMo/SleepEEGNet)
 Based on SleepEEGNet, we tried to add skip connection and dilated convolution in the CNN part.
+Screenshots of all results are stored in the image folder, and the attention map is in the attention_maps folder.
 
 ## Recruitments
 * Python 2.7

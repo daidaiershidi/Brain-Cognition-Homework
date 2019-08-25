@@ -88,7 +88,12 @@ python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(dilatedconv)
 python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
 ```
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/results.png)
-We can see that we used fewer training epochs and relatively fewer parameters, and we got fairly good results.
+We propose three automatic sleep stage annotations based on SleepEEGNet using a single channel EEG signal.Change in the CNN part. 
+* (1) Add skip connection to the original CNN part, this can be retained the more feature.
+* (2) Replace the CNN part with a simple fractal network. Through a combination of multiple different depth networks, the shallow layer provides a quicker answer and the deep layer provides a more accurate answer in depth.
+* (3) Added dilated convolution based on fractal networks to monitor the same convolution to a greater time.
+We evaluated the proposed method on a single EEG channel (ie Fpz-Cz channel) from the Physionet Sleep-EDF datasets published in 2013.
+You can see that we used fewer training epochs and relatively fewer parameters, and we got fairly good results.
 In fact, due to limitations in computing resources,and we still have other models to run, and time is too late. we only used 5 channels of output in the dilated convolution. Although this greatly reduces the parameters, it also greatly affects the accuracy. Because other networks, including the original network, the output channels are 128 channels. I personally think that if you increase the number of training rounds or increase the amount of parameters, the model can also achieve a good result.
 
 ## Visualization

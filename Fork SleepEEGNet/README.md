@@ -88,6 +88,8 @@ python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(dilatedconv)
 python summary.py --data_dir outputs_2013/outputs_eeg_fpz_cz(conv)
 ```
 ![](https://github.com/daidaiershidi/Brain-Cognition-Homework/blob/master/Fork%20SleepEEGNet/images/results.png)
+## Conclusion
+
 We propose three automatic sleep stage annotations based on SleepEEGNet using a single channel EEG signal.Change in the CNN part. 
 * Add skip connection to the original CNN part, this can be retained the more feature.
 * Replace the CNN part with a simple fractal network. Through a combination of multiple different depth networks, the shallow layer provides a quicker answer and the deep layer provides a more accurate answer in depth.

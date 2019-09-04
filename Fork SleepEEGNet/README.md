@@ -3,6 +3,8 @@ Forked from SajadMo/SleepEEGNet(https://github.com/SajadMo/SleepEEGNet)
 Based on SleepEEGNet, we tried to add skip connection, fractal network and dilated convolution in the CNN part.
 Screenshots of all results are stored in the image folder, and the attention map is in the attention_maps folder.
 
+原作者的代码由于版本问题在python2.7不能直接跑，我们做了部分修改。（2019.9.4）
+
 ## Recruitments
 * Python 2.7
 * tensorflow/tensorflow-gpu 1.10
